@@ -12,15 +12,16 @@
   </head>
   <body>
     <nav>
- <!--    <div ng-controller="NavigationController"> -->
       <div class='nav-wrapper blue'>
+        <div ng-controller="NavigationController">
       <a href='#' class="brand-logo">LoL Cosplay</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><form>
+          <li><form ng-submit="navTo(searchBar)">
             <div class="input-field">
-              <input id="search" type="search" required ng-model='searchBar' on-key-enter="navTo(searchBar)">
+              <input id="search" type="search" ng-model='searchBar'" required>
               <label for="search"><i class="material-icons">search</i></label>
               <i class="material-icons">close</i>
+              <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
             </div>
           </form></li>
           <li><a href = '#/champions'> Champions </a></li>
@@ -29,7 +30,7 @@
           <li><a href = '#/faq'> FAQ </a></li>
         </ul>
       </div>
-<!--     </div> -->
+    </div>
     </nav>
     <!-- the ng-view directive is where our templates will be loaded into when navigated to -->
     <div ng-view></div>

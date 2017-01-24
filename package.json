@@ -5,10 +5,6 @@
   "author": "Josephine Chen <jychen@g.hmc.edu>",
   "license": "UNLICENSED",
   "private": true,
-  "cacheDirectories": [
-    "node_modules",
-    "bower_components"
-  ],
   "engines": {
     "node": ">=4.0.0"
   },

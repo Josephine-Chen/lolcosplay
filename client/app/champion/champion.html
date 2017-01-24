@@ -15,14 +15,17 @@
   <div class="row">
     <div class="skins" ng-repeat="skin in data.skins">
       <div class = "col s2">
-        <div class="card">
+        <div class="card" ng-click='toggleModal(skin)'>
           <div class="card-image">
             <img class='skin-preview center-align' src='https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{data.key}}_{{skin.num}}.jpg'/>
           </div>
-        <div class="card content">
-          <p>{{skin.name}}</p>
-         </div>
+          <div class="card content">
+            <p>{{skin.name}}</p>
+          </div>
         </div>
+        <modal-dialog show='modalShown' class='modalSplash'>
+          <img class='skin-splash center-align' src='https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{data.key}}_{{skin.num}}.jpg' />
+        </modal-dialog>
       </div>
     </div>
   </div>
@@ -35,7 +38,7 @@
       <span class="title">How to Paint Costume Props</span>
       <p>KamuiCosplay</p>
       </a>
-      <a href="#!" class="secondary-content"><i class="material-icons">flag</i></a>
+      <a href="#!" class="secondary-content"><i class="material-icons icon-red">flag</i></a>
       </li>
 
     <li class="collection-item avatar">
@@ -44,7 +47,7 @@
       <span class="title">All About LEDs</span>
       <p>AdaFruit</p>
       </a>
-      <a href="#!" class="secondary-content"><i class="material-icons">flag</i></a>
+      <a href="#!" class="secondary-content"><i class="material-icons icon-red">flag</i></a>
     </li>
 
     <li class="collection-item avatar">
@@ -53,7 +56,7 @@
       <span class="title">Foam Latex Prosthetics: Make-up Application Guide</span>
       <p>ImpaQt Fx</p>
       </a>
-      <a href="#!" class="secondary-content"><i class="material-icons">flag</i></a>
+      <a href="#!" class="secondary-content"><i class="material-icons icon-red">flag</i></a>
     </li>
   </ul>
   </div>

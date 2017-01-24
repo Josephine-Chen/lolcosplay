@@ -179,6 +179,14 @@ angular.module('mvp.navigation', [])
       location = 'AurelionSol';
     } else if (location === 'Troll') {
       location = 'Trundle';
+    } else if (location === 'Cow' || location === 'Ali') {
+      location = 'Alistar';
+    } else if (location === 'Kass') {
+      location = 'Kassadin';
+    } else if (location === 'Snake' || location === 'Cass') {
+      location = 'Cassiopeia';
+    } else if (location === 'Devil' || location === 'Satan' || location === 'Pos') {
+      location = 'Teemo';
     }
 
     if (validChamps.hasOwnProperty(location)) {

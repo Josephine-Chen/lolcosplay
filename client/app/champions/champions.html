@@ -17,7 +17,7 @@
   <!-- champ side -->
   <div class='col s10'>
     <div class='row'>
-    <div class="champion" ng-repeat='champion in data.champions | tagFilter:classFilter'>
+    <div class="champion" ng-repeat='champion in data.champions | tagFilter:classFilter | orderBy: "name"'>
       <div class="col s1">
         <a href = "#/champions/{{champion.key}}">
         <img class='champion-icon' src='https://ddragon.leagueoflegends.com/cdn/7.2.1/img/champion/{{champion.image.full}}'/>

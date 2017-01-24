@@ -21,4 +21,8 @@ angular.module('mvp.champion', [])
       console.log('error getting scope data champions', err);
     });
     }();
+
+  $scope.modal = function(result) {
+    close(result, 500);
+  }
 });

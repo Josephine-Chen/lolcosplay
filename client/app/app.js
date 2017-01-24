@@ -12,7 +12,6 @@ angular.module('mvp', [
     controller: 'ChampionsController'
   })
   .when('/champions/:key', {
-    //templateUrl: function(champ) { return 'app/champion/champion/' + champ.key; },
     templateUrl: 'app/champion/champion.html',
     controller: 'ChampionController'
   })

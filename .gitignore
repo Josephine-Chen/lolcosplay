@@ -3,6 +3,9 @@
 .env
 server/config/database.js
 
+_champions.json
+_champions2.json
+
 # Logs
 logs
 *.log

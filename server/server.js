@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Champion = require('./champions/championModel.js');
-var db = require('./config/database.js');
+//var db = require('./config/database.js');
 var ObjectId = mongoose.Types.ObjectId;
 var app = express();
 
@@ -10,9 +10,9 @@ app.use(express.static(__dirname + '/../client'));
 app.use(bodyParser.json());
 
 //mlab
-mongoose.connect(db.url || process.env.MONGODB_URI);
+//mongoose.connect(db.url || process.env.MONGODB_URI);
 //prod
-//mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
 //Generic error handler
 function handleError(res, reason, message, code) {
@@ -31,6 +31,7 @@ app.get('/api/champions', function(req, res) {
   });
 });
 
+//Not in use atm
 app.get('/api/champion', function(req, res) {
   console.log('params are', req.params);
   db.url.champions.find({

@@ -9,6 +9,7 @@ Once a champion or skin is chosen, users are able to find guides and tutorials t
 ##Functionalities to implement: ##
 -Search
 -Role filter on champions page
+-Modal window on champion skins to show full splash
 -Gallery - instragram/flickr API
 -FAQ - form functionality
 -Cosplay Filter

@@ -15,17 +15,21 @@
   <div class="row">
     <div class="skins" ng-repeat="skin in data.skins">
       <div class = "col s2">
-        <div class="card" ng-click='toggleModal(skin)'>
+        <a class="card" data-target='{{skin.num}}' modal>
           <div class="card-image">
             <img class='skin-preview center-align' src='https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{data.key}}_{{skin.num}}.jpg'/>
           </div>
           <div class="card content">
             <p>{{skin.name}}</p>
           </div>
-        </div>
-        <modal-dialog show='modalShown' class='modalSplash'>
+        </a>
+        <!-- Modal window -->
+        <div id='{{skin.num}}' class='modal'>
+          <div class="modal-content">
           <img class='skin-splash center-align' src='https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{data.key}}_{{skin.num}}.jpg' />
-        </modal-dialog>
+          </div>
+          </div>
+        <!-- End of modal window -->
       </div>
     </div>
   </div>

@@ -1,28 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongodb = require('mongodb');
-var fs = require('fs');
+var mongoose = require('mongoose');
+var Champion = require('champions/championModel.js');
 
 var app = express();
 
 app.use(express.static(__dirname + '/../client'));
 app.use(bodyParser.json());
 
-var db;
-
-mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, database) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  }
-  db = database;
-  console.log('Database connection ready');
-
-  var server = app.listen(process.env.PORT || 8000, function() {
-    var port = server.address().port;
-    console.log("App now running on port", port);
-  });
-});
+//mlab
+mongoose.connect(process.env.MONGODB_URI+'@ds127439.mlab.com:27439/heroku_bhsntbw8');
 
 //Generic error handler
 function handleError(res, reason, message, code) {
@@ -30,31 +17,39 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({"error": message});
 }
 
+//Routes
 app.get('/champs', function(req, res) {
-  db.collection(champions).find({}, function(err, data) {
+  Champion.find({}, function(err, champions) {
     if (err) {
-      handleError(res, err.message, "failed to get champs");
+      handleError(res, err.message, "failed to get champions");
     } else {
-      res.status(200).send(data);
+      res.status(200).send(champions);
     }
   });
 });
 
-// app.post('/champs', function(req, res) {
-//   fs.readFile('_champion.js', function(err, data) {
-//     if (err) {
-//       handleError(res, err.message, "failed to post champs");
-//     } else {
-//       for(champs in data) {
-//         db.collection(champions)
-//       }
-//     }
-//   })
-// })
-// var port = process.env.PORT || 8000;
+app.post('/champs', function(req, res) {
+  var champion = req.body;
+  Champion.create({
+    name: champion.name,
+    id: champion.id,
+    title: champion.title,
+    skins: champion.skins,
+    tags: champion.tags,
+    lore: champion.lore,
+    image: champion.image.full
+  }, function (err, data) {
+    if (err) {
+      handleError(res, err.message, "failed to create champion");
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
 
-// app.listen(port, function(){
-//   console.log('Node app is running on port', port);
-// });
 
-// module.exports = app;
+//Start server
+var server = app.listen(process.env.PORT || 8000, function() {
+  var port = server.address().port;
+  console.log("App now running on port", port);
+});

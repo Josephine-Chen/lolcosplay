@@ -1,4 +1,4 @@
-var data = {
+{"data": {
   "Jax": {
     "id": 24,
     "key": "Jax",
@@ -7307,4 +7307,5 @@ var data = {
       "Mage"
     ]
   }
+}
 }

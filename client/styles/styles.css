@@ -149,3 +149,9 @@ input[type=url]:focus {
   max-height: 50px;
   max-width: 50px;
 }
+.champion-icon-large {
+  max-height: 100px;
+}
+.skin-preview {
+  max-width: 150px;
+}

@@ -1,0 +1,24 @@
+<div id='championPage'>
+<h2> {{data.name}} </h2>
+  <div class='row'>
+    <div class = "col s2">
+      <img class='champion-icon-large' src='https://ddragon.leagueoflegends.com/cdn/7.2.1/img/champion/{{data.image.full}}'/>
+    </div>
+    <div class = "col s10">
+      {{data.lore}}
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="skins" ng-repeat="skin in data.skins">
+      <div class = "col s2">
+        <img class='skin-preview' src='https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{data.key}}_{{skin.num}}.jpg'/>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h3> Guides </h3>
+  <ul>
+    <li> Guides here </li>
+  </ul>
+</div>

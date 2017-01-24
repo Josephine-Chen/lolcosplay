@@ -10,10 +10,6 @@ angular.module('mvp.champions', [])
       console.log('error getting scope data champions', err);
     });
     }();
-
-  $scope.addChampion = function(){
-
-  }
   // $scope.addChampion = function(){
   //   for(var champ in $scope.data.champions) {
   //     $http.post('/api/champs', $scope.data.champions[champ]).success(function(data, status) {

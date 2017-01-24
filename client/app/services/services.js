@@ -3,13 +3,18 @@ angular.module('mvp.services', [])
 .factory('Champions', function ($http) {
   var getAllChampions = function() {
     return $http.get('/api/champions');
-    // return $http({
-    //   method: 'GET',
-    //   url: 'https://na.api.pvp.net/api/lol/static-data/NA/v1.2/champion?champData=lore,skins,tags,image&api_key=process.env.LOL_API_TOKEN',
-    // });
   };
 
+  var getChampion = function(champion) {
+    console.log('getting', champion);
+    return $http({
+      url: '/api/champion',
+      method: 'GET',
+      params: champion
+      });
+  }
   return {
-    getAllChampions: getAllChampions
+    getAllChampions: getAllChampions,
+    getChampion: getChampion
   }
 })

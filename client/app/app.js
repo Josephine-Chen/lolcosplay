@@ -2,6 +2,7 @@ angular.module('mvp', [
   'mvp.services',
   'mvp.champions',
   'mvp.champion',
+  'mvp.navigation',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
@@ -14,6 +15,15 @@ angular.module('mvp', [
     //templateUrl: function(champ) { return 'app/champion/champion/' + champ.key; },
     templateUrl: 'app/champion/champion.html',
     controller: 'ChampionController'
+  })
+  .when('/faq', {
+    templateUrl: 'app/faq.html'
+  })
+  .when('/themes', {
+    templateUrl: 'app/themes.html'
+  })
+  .when('/gallery', {
+    templateUrl: 'app/gallery.html'
   })
   .otherwise('/champions');
 

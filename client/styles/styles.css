@@ -78,3 +78,6 @@ h1 {
 nav .nav-wrapper form, nav .nav-wrapper form .input-field{
 height: 100%;
 }
+#faq{
+  padding:30px;
+}

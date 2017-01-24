@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Champion = require('./champions/championModel.js');
-var db = require('./config/database.js');
+//var db = require('./config/database.js');
 
 var app = express();
 
@@ -11,6 +11,8 @@ app.use(bodyParser.json());
 
 //mlab
 mongoose.connect(db.url || process.env.MONGODB_URI);
+//prod
+mongoose.connect(process.env.MONGODB_URI);
 
 //Generic error handler
 function handleError(res, reason, message, code) {

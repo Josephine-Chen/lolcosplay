@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 var db;
 
-mongodb.MongoClient.connect(process.eng.MONGODB_URI, function(err, databse) {
+mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, databse) {
   if (err) {
     console.log(err);
     process.exit(1);

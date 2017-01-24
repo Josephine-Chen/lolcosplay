@@ -11,13 +11,24 @@
 <link type="text/css" rel="stylesheet" href="styles/materialize.min.css"  media="screen,projection"/>
   </head>
   <body>
-    <h1>LoL Cosplay Resources</h1>
-    <div class='navigation'>
-      <ul>
-        <li><a href = '#/champions'> Champions </a></li>
-        <li><a href = '#/guides'> Guides </a></li>
-      </ul>
-    </div>
+    <nav>
+      <div class='nav-wrapper blue'>
+      <a href='#' class="brand-logo">LoL Cosplay</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form></li>
+          <li><a href = '#/champions'> Champions </a></li>
+          <li><a href = '#/themes'> Themes </a></li>
+          <li><a href = '#/gallery'> Gallery </a></li>
+          <li><a href = '#/faq'> FAQ </a></li>
+        </ul>
+      </div>
+    </nav>
     <!-- the ng-view directive is where our templates will be loaded into when navigated to -->
     <div ng-view></div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

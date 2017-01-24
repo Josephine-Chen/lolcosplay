@@ -5,16 +5,19 @@
   "author": "Josephine Chen <jychen@g.hmc.edu>",
   "license": "UNLICENSED",
   "private": true,
-  "cacheDirectories":["node_modules", "bower_components"],
+  "cacheDirectories": [
+    "node_modules",
+    "bower_components"
+  ],
   "engines": {
     "node": ">=4.0.0"
   },
   "scripts": {
-    "start": "nodemon server/server.js",
-    "postinstall": "bower install"
+    "start": "nodemon server/server.js"
   },
   "dependencies": {
     "body-parser": "^1.16.0",
+    "bower": "^1.8.0",
     "express": "^4.4.5",
     "mongodb": "^2.2.21",
     "mongoose": "^4.1.0",

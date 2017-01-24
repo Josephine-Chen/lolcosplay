@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/../client'));
 app.use(bodyParser.json());
 
 //mlab
-mongoose.connect(db.url || process.env.MONGODB_URI);
+//mongoose.connect(db.url || process.env.MONGODB_URI);
 //prod
 mongoose.connect(process.env.MONGODB_URI);
 

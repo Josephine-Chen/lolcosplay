@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var Champion = require('champions/championModel.js');
+var Champion = require('./champions/championModel.js');
+var db = require('./config/database.js');
 
 var app = express();
 
@@ -9,7 +10,7 @@ app.use(express.static(__dirname + '/../client'));
 app.use(bodyParser.json());
 
 //mlab
-mongoose.connect(process.env.MONGODB_URI+'@ds127439.mlab.com:27439/heroku_bhsntbw8');
+mongoose.connect(db.url || process.env.MONGODB_URI);
 
 //Generic error handler
 function handleError(res, reason, message, code) {
@@ -18,7 +19,7 @@ function handleError(res, reason, message, code) {
 }
 
 //Routes
-app.get('/champs', function(req, res) {
+app.get('/api/champions', function(req, res) {
   Champion.find({}, function(err, champions) {
     if (err) {
       handleError(res, err.message, "failed to get champions");
@@ -28,7 +29,7 @@ app.get('/champs', function(req, res) {
   });
 });
 
-app.post('/champs', function(req, res) {
+app.post('/api/champions', function(req, res) {
   var champion = req.body;
   Champion.create({
     name: champion.name,

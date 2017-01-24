@@ -6,7 +6,8 @@ angular.module('mvp.services', [])
   //     return data.data;
   //   });
   var getAllChampions = function() {
-    return $http.get(__dirname + '/../server/_champions.js');
+    console.log('get all champs');
+    return $http.get('/api/champs');
     // return $http({
     //   method: 'GET',
     //   url: 'https://na.api.pvp.net/api/lol/static-data/NA/v1.2/champion?champData=lore,skins,tags,image&api_key=process.env.LOL_API_TOKEN',

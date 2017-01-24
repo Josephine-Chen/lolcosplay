@@ -143,7 +143,7 @@ angular.module('mvp.navigation', [])
     //Names and Nicknames
     if (location === 'Jarvaniv') {
       location = 'JarvanIV';
-    } else if (location === 'Masteryi' || location === 'Master yi') {
+    } else if (location === 'Masteryi' || location === 'Master yi' || location === 'Yi') {
       location = 'MasterYi';
     } else if (location === 'Xinzhao' || location === 'Xin zhao' || location === 'Xin') {
       location = 'XinZhao';
@@ -177,6 +177,8 @@ angular.module('mvp.navigation', [])
       location = 'Heimerdinger';
     } else if (location === 'Aurelionsol' || location === 'Aurelion sol') {
       location = 'AurelionSol';
+    } else if (location === 'Troll') {
+      location = 'Trundle';
     }
 
     if (validChamps.hasOwnProperty(location)) {

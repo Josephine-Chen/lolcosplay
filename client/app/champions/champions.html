@@ -2,13 +2,13 @@
   <nav>
     <div class="nav-wrapper blue darken-4">
       <ul class="left hide-on-med-and-down">
-        <li><a href="#">All</a></li>
-        <li><a href="#">Fighters</a></li>
-        <li><a href="#">Tanks</a></li>
-        <li><a href="#">Assassins</a></li>
-        <li><a href="#">Mages</a></li>
-        <li><a href="#">Marksman</a></li>
-        <li><a href="#">Supports</a></li>
+        <li><a class="waves-effect waves-teal btn-flat blue darken-4 white-text" ng-click="classFilter = ''">All</a></li>
+        <li><a class="waves-effect waves-teal btn-flat blue darken-4 white-text" ng-click="classFilter = 'Fighter'">Fighters</a></li>
+        <li><a class="waves-effect waves-teal btn-flat blue darken-4 white-text" ng-click="classFilter = 'Tank'">Tanks</a></li>
+        <li><a class="waves-effect waves-teal btn-flat blue darken-4 white-text" ng-click="classFilter = 'Assassin'">Assassins</a></li>
+        <li><a class="waves-effect waves-teal btn-flat blue darken-4 white-text" ng-click="classFilter = 'Mage'">Mages</a></li>
+        <li><a class="waves-effect waves-teal btn-flat blue darken-4 white-text" ng-click="classFilter = 'Marksman'">Marksman</a></li>
+        <li><a class="waves-effect waves-teal btn-flat blue darken-4 white-text" ng-click="classFilter = 'Support'">Supports</a></li>
       </ul>
     </div>
   </nav>
@@ -17,7 +17,7 @@
   <!-- champ side -->
   <div class='col s10'>
     <div class='row'>
-    <div class="champion" ng-repeat='champion in data.champions'>
+    <div class="champion" ng-repeat='champion in data.champions | tagFilter:classFilter'>
       <div class="col s1">
         <a href = "#/champions/{{champion.key}}">
         <img class='champion-icon' src='https://ddragon.leagueoflegends.com/cdn/7.2.1/img/champion/{{champion.image.full}}'/>

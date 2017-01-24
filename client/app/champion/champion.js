@@ -2,15 +2,6 @@ angular.module('mvp.champion', [])
 
 .controller('ChampionController', function($scope, $http, $location, Champions) {
   var champ = $location.$$path.split('/')[2];
-  // $scope.getChampion = function(champ){
-  //   Champions.getChampion(champ).then(function(data) {
-  //     console.log('champ data', data);
-  //     $scope.data=data;
-  //   }).catch(function(err) {
-  //     console.log('error getting champion data', err);
-  //   });
-  // }();
-
 
   //Hardcoded
   $scope.data = {};

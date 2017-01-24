@@ -24,6 +24,6 @@ angular.module('mvp', [
   .when('/gallery', {
     templateUrl: 'app/gallery/gallery.html'
   })
-  .otherwise('/champions');
+  .otherwise({redirectTo: '/champions'});
 
 })

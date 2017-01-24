@@ -1,6 +1,6 @@
 body {
-  margin-left: 10px;
-  margin-right:10px;
+  margin-left: 25%;
+  margin-right:10%;
   margin-top: 10px;
   font-family: arial, sans-serif;
 }
@@ -60,8 +60,8 @@ h1 {
   clear: both;
 }
 .champion-icon {
-  max-height: 50px;
-  max-width: 50px;
+  max-height: 100%;
+  max-width: 100%;
 }
 .champion-icon-large {
   max-height: 100%;

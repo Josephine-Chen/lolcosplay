@@ -22,7 +22,7 @@ angular.module('mvp', [
     templateUrl: 'app/themes.html'
   })
   .when('/gallery', {
-    templateUrl: 'app/gallery.html'
+    templateUrl: 'app/gallery/gallery.html'
   })
   .otherwise('/champions');
 

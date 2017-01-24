@@ -29,24 +29,25 @@ app.get('/api/champions', function(req, res) {
   });
 });
 
-app.post('/api/champions', function(req, res) {
-  var champion = req.body;
-  Champion.create({
-    name: champion.name,
-    id: champion.id,
-    title: champion.title,
-    skins: champion.skins,
-    tags: champion.tags,
-    lore: champion.lore,
-    image: champion.image.full
-  }, function (err, data) {
-    if (err) {
-      handleError(res, err.message, "failed to create champion");
-    } else {
-      res.sendStatus(200);
-    }
-  });
-});
+//Unnecesary add champion because all champions pre-populated into database
+// app.post('/api/champions', function(req, res) {
+//   var champion = req.body;
+//   Champion.create({
+//     name: champion.name,
+//     id: champion.id,
+//     title: champion.title,
+//     skins: champion.skins,
+//     tags: champion.tags,
+//     lore: champion.lore,
+//     image: champion.image.full
+//   }, function (err, data) {
+//     if (err) {
+//       handleError(res, err.message, "failed to create champion");
+//     } else {
+//       res.sendStatus(200);
+//     }
+//   });
+// });
 
 
 //Start server

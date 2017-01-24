@@ -1,10 +1,11 @@
 angular.module('mvp.champions', [])
-//.controller('ChampionsController', function($scope, $http, Champions) {
+
 .controller('ChampionsController', function($scope, $http, Champions) {
   $scope.data = {};
   $scope.getAllChampions = function(){
     Champions.getAllChampions().then(function(champions) {
-      $scope.data.champions = champions;
+      $scope.data.champions = champions.data[0].data;
+      console.log(champions.data[0].data);
     }).catch(function(err) {
       console.log('error getting scope data champions', err);
     });

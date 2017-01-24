@@ -10,15 +10,20 @@
     <link type="text/css" rel="stylesheet" href="lib/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
   </head>
   <body>
-    <h1>LoL Cosplay</h1>
-    Hello.
-    <a href = '#/champions'> Champs </a>
+    <h1>LoL Cosplay Resources</h1>
+    <div class='navigation'>
+      <ul>
+        <li><a href = '#/champions'> Champions </a></li>
+        <li><a href = '#/guides'> Guides </a></li>
+      </ul>
+    </div>
     <!-- the ng-view directive is where our templates will be loaded into when navigated to -->
     <div ng-view></div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="lib/materialize/dist/js/materialize.min.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
+    <script src="/../server/_champions.js"></script>
     <script src="app/champions/champions.js"></script>
     <script src="app/services/services.js"></script>
     <script src="app/app.js"></script>

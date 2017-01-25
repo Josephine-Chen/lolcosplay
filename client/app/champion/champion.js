@@ -1,6 +1,9 @@
 var app = angular.module('mvp.champion', ['ui.materialize'])
+app.filter('unsafe', function($sce) {
+  return $sce.trustAsHtml;
+});
 
-app.controller('ChampionController', function($scope, $http, $location, Champions) {
+app.controller('ChampionController', function($scope, $http, $location, Champions, $sce) {
   var champ = $location.$$path.split('/')[2];
 
   //Hardcoded

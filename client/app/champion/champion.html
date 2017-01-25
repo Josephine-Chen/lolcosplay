@@ -1,14 +1,14 @@
 <div id='championPage'>
   <div class='champion-info-container card-panel blue lighten-4'>
     <div class='row'>
-      <div class = "col s2">
+      <div class = "col s2 center-align">
       <h3 class = 'center-align'> {{data.name}} </h3>
       <h6 class = 'center-align'> {{data.title}} </h6>
-        <img class='champion-icon-large z-depth-3 right-align' src='https://ddragon.leagueoflegends.com/cdn/7.2.1/img/champion/{{data.image.full}}'/>
+      <img class='champion-icon-large z-depth-3 center-align' src='https://ddragon.leagueoflegends.com/cdn/7.2.1/img/champion/{{data.image.full}}'/>
       </div>
       <div class = "col s10" id='lore'>
         <br>
-        {{data.lore}}
+        <div ng-bind-html="data.lore | unsafe"></div>
       </div>
     </div>
   </div> <!--end of container-->

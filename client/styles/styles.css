@@ -1,6 +1,6 @@
 body {
   margin-left: 25%;
-  margin-right:10%;
+  margin-right:25%;
   margin-top: 10px;
   font-family: arial, sans-serif;
 }
@@ -100,4 +100,30 @@ i.icon-red{
 
 .skin-splash{
   max-width: 100%;
+}
+
+.lore-container{
+  height: 250px;
+  max-width: 100%;
+  padding: 0px;
+  margin:0px;
+  overflow: hidden;
+}
+
+.show{
+  overflow:visible;
+  height: auto;
+}
+
+.formTitle{
+  font-size:20px;
+  color: #353535;
+  padding-right:10px;
+}
+.submit-button{
+  margin-top:20px;
+  position:fixed;
+}
+#filter{
+  padding-bottom:30px;
 }

@@ -27,18 +27,103 @@
     </div>
     </div>
   </div> <!-- end of champ side -->
-  <div class='col s2' id='filter'>
-  <h5>Cosplay Filters</h5>
-  Gender: <br>
-  Faction: <br>
-  Yordle: <br>
-  Humanoid: <br>
-  Theme: <br>
-  Hair Color: <br>
-  Armor: <br>
-  Body Paint: <br>
-  Wings: <br>
-  Tail: <br>
+  <div class='col s2 blue lighten-5' id='filter'>
+  <form action="#">
+    <h5 class="blue-text">Cosplay Filters</h5>
+    <p class='formTitle'>Faction</p>
+    <select id="factionSelect" ng-model="select.value1" material-select watch>
+        <option>RuneTerra</option>
+        <option>Noxus</option>
+        <option>Demacia</option>
+        <option>Bilgewater</option>
+    </select>
+    <p class='formTitle'>Theme</p>
+    <select id="themeSelect" ng-model="select.value1" material-select watch>
+        <option>PROJECT</option>
+        <option>Star Guardian</option>
+        <option>Ultimate</option>
+        <option>Internet Browser</option>
+    </select>
+    <span class='formTitle'>Gender</span><i class="material-icons blue md-18 right white-text" ng-model='genderSelection' ng-init='genderSelection = false' ng-click='genderSelection=!genderSelection'>add</i>
+    <div id='genderSelection' ng-show='genderSelection === true' ng-hide='genderSelection === false'>
+      <p>
+        <input type="checkbox" id="male"/>
+        <label for="male">Male</label>
+      </p>
+      <p>
+        <input type="checkbox" id="female"/>
+        <label for="female">Female</label>
+      </p>
+      <p>
+        <input type="checkbox" id="other"/>
+        <label for="other">Other</label>
+      </p>
+    </div>
+    <br>
+    <span class='formTitle'>Hair Color</span><i class="material-icons blue md-18 right white-text" ng-model='colorSelection' ng-init='colorSelection = false' ng-click='colorSelection=!colorSelection'>add</i>
+    <div id='colorSelection' ng-show='colorSelection === true' ng-hide='colorSelection === false'>
+      <p>
+      Red
+      Orange
+      Yellow
+      Green
+      Blue
+      Purple
+      Gray
+      Brown
+      White
+      Black
+      </p>
+    </div>
+    <br>
+    <span class='formTitle'>Armor</span><i class="material-icons blue md-18 right white-text" ng-model='armorSelection' ng-init='armorSelection = false' ng-click='armorSelection=!armorSelection'>add</i>
+    <div id='armorSelection' ng-show='armorSelection === true' ng-hide='armorSelection === false'>
+      <p>
+        <input type="checkbox" id="male"/>
+        <label for="male">None</label>
+      </p>
+      <p>
+        <input type="checkbox" id="female"/>
+        <label for="female">Light</label>
+      </p>
+      <p>
+        <input type="checkbox" id="other"/>
+        <label for="other">Medium</label>
+      </p>
+      <p>
+        <input type="checkbox" id="other"/>
+        <label for="other">Heavy</label>
+      </p>
+    </div>
+    <br>
+
+    <span class='formTitle'>Other</span><i class="material-icons blue md-18 right white-text" ng-model='otherSelection' ng-init='otherSelection = false' ng-click='otherSelection=!otherSelection'>add</i>
+    <div id='otherSelection' ng-show='otherSelection === true' ng-hide='otherSelection === false'>
+      <p>
+        <input type="checkbox" id="paint"/>
+        <label for="paint">Body Paint</label>
+      </p>
+      <p>
+        <input type="checkbox" id="humanoid"/>
+        <label for="humanoid">Humanoid</label>
+      </p>
+       <p>
+        <input type="checkbox" id="yordle"/>
+        <label for="yordle">Yordle</label>
+      </p>
+       <p>
+        <input type="checkbox" id="wings"/>
+        <label for="wings">Wings</label>
+      </p>
+       <p>
+        <input type="checkbox" id="tail"/>
+        <label for="tail">Tail</label>
+      </p>
+    </div>
+    <button class="btn submit-button waves-effect waves-light blue" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+  </form>
   </div>
 </div>
 </div>
